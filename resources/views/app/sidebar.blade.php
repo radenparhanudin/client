@@ -11,7 +11,7 @@
 			<li>
 				<a href="{{ route('cek-koneksi.index') }}" class="{{ set_active('cek-koneksi.index') }}"><i class="fa fa-exchange mr-2"></i> Cek Koneksi Mesin</a>
 			</li>
-			<li>
+			{{-- <li>
 				<a href="{{ route('upload-log-mesin.index') }}" class="{{ set_active('upload-log-mesin.index') }}"><i class="fa fa-grav mr-2"></i>Upload Log Mesin</a>
 			</li>
 			<li>
@@ -19,7 +19,7 @@
 			</li>
 			<li>
 				<a href="{{ route('register-mesin.index') }}" class="{{ set_active('register-mesin.index') }}"><i class="fa fa-microchip mr-2"></i>Register Mesin</a>
-			</li>
+			</li> --}}
 		</ul>
 	</div>
 </div>

@@ -18,23 +18,8 @@ class CekKoneksiMesinController extends Controller
     {
     	if ($request->ajax()) {
     		try {
-                $options = [
-                    'ip' => $request->get('ip'),   // '169.254.0.1' by default (totally useless!!!).
-                    // 'internal_id' => 1,    // 1 by default.
-                    // 'com_key' => 0,        // 0 by default.
-                    // 'description' => 'N/A', // 'N/A' by default.
-                    'soap_port' => 80,     // 80 by default,
-                    'udp_port' => 5005,      // 4370 by default.
-                    // 'encoding' => 'utf-8'    // iso8859-1 by default.
-                  ];
-              
-                 $tad_factory = new TADFactory($options);
-                // $tad_factory = new TADFactory(['ip'=>$request->get('ip')]);
+                $tad_factory = new TADFactory(['ip'=>$request->get('ip')]);
 				$tad = $tad_factory->get_instance();
-                $get_all_user_info = $tad->get_all_user_info()->to_array();
-                $get_att_log = $tad->get_att_log();
-                $get_date = $tad->get_date();
-                return $get_date;
 				$data = array(
                     'platform'         => $tad->get_platform()->to_array()['Row']['Information'], 
                     'serial_number'    => $tad->get_serial_number()->to_array()['Row']['Information'], 
