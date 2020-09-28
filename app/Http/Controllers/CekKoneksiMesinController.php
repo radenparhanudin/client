@@ -20,10 +20,6 @@ class CekKoneksiMesinController extends Controller
     		try {
                 $tad_factory = new TADFactory(['ip'=>$request->get('ip')]);
 				$tad = $tad_factory->get_instance();
-                $get_date = $tad->get_date();
-                $get_platform = $tad->get_platform()->to_array();
-
-                return $get_platform;
 				$data = array(
                     'platform'         => $tad->get_platform()->to_array()['Row']['Information'], 
                     'serial_number'    => $tad->get_serial_number()->to_array()['Row']['Information'], 
